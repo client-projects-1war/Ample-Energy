@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Verification</title>
+</head>
+<body>
+
+    <h1>Product Verification</h1>
+
+    <label for="productIdentifier">Enter or Scan Product Identifier:</label>
+    <input type="text" id="productIdentifier" placeholder="Enter or scan identifier">
+    <button onclick="verifyProduct()">Verify</button>
+
+    <p id="verificationResult"></p>
+
+    <script>
+        function verifyProduct() {
+            var enteredIdentifier = document.getElementById('productIdentifier').value;
+
+            // Send the enteredIdentifier to the backend for verification
+            // Implement AJAX or fetch to interact with the backend
+
+            // For demonstration purposes, let's assume a simple verification result
+            var isProductValid = true;
+
+            // Display the verification result
+            var resultElement = document.getElementById('verificationResult');
+            if (isProductValid) {
+                resultElement.innerHTML = 'Product is genuine!';
+                resultElement.style.color = 'green';
+            } else {
+                resultElement.innerHTML = 'Invalid product identifier.';
+                resultElement.style.color = 'red';
+            }
+        }
+    </script>
+
+</body>
+</html>
